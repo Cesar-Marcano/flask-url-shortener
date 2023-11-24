@@ -24,4 +24,4 @@ To use this application, simply visit `http://localhost:5000` in your web browse
 Contributions are welcome. Please open an issue or a pull request if you have something you would like to add or change.
 
 ## License
-This project is licensed under the terms of the MIT license.
+This project is licensed under the terms of the Apache-2.0 License. For more information, click [here](./LICENSE)
