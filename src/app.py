@@ -1,6 +1,8 @@
-from flask import Flask, request, jsonify
+import secrets
+
+from flask import Flask, request, jsonify, redirect, make_response
 from error import MissingFieldError
-from db import init
+from db import init, create_url, read_url
 
 init()
 
@@ -15,7 +17,18 @@ def register_route():
     if not title or not url:
         raise MissingFieldError("Missing fields. Expected to receive: title: string; url: string;")
     
-    return "hello world"
+    slug = secrets.token_hex(6)
+    
+    create_url(title, url, slug)
+    
+    return make_response(jsonify({"slug": slug}), 201)
+
+
+@app.get("/s/<slug>")
+def shorten_url(slug):
+    data = read_url(slug)
+    
+    return redirect(data[0], code=301)
     
     
 @app.errorhandler(MissingFieldError)
