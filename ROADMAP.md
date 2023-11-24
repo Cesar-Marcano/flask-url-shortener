@@ -1,0 +1,8 @@
+- [x] Create main functions (store urls and redirect to the provided urls)
+- [ ] Add authentication
+- [ ] Add URL analytics
+- [ ] Add ability to delete URLs (note: edit not included because it can redirect to harmful content)
+- [ ] Add a harmful site warning (e.g., mature content, malware, file sharing sites)
+- [ ] Add a way to create a custom slug (with a subscription)
+- [ ] Add temporary shorten URLs
+- [ ] Add Usage limited URLs
